@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIMS - Student Portal | UMI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero-banner">
+        <div class="hero-container">
+            <img src="/public/logo.png" alt="Uganda Management Institute Logo" class="umi-logo">
+            <h1>Student Portal</h1>
+            <p class="description">
+                Manage your post-graduate academic research progress, sync milestones, track document reviews, and interface with your supervisors seamlessly.
+            </p>
+        </div>
+        <div class="nav-menu">
+          <a href="#" class="btn-view-docs active" title="Student Home">Home</a>
+          <a href="#downloads-section" class="btn-view-docs" title="Jump to Downloadable Materials">Downloads</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- <section class="gateway-container">
+            <div class="gateway-card">
+                <div class="gateway-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <p class="gateway-subtitle">Log in to track your student journey, submit defense drafts, and manage approvals.</p>
+                
+                <div class="actions">
+                    <a href="https://drims.umi.ac.ug" target="_blank" class="btn btn-primary">
+                        Launch Student Portal <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <button class="btn btn-secondary" onclick="copyLink('https://drims.umi.ac.ug', this)">
+                        <i class="fa-solid fa-copy"></i> Copy URL
+                    </button>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Main Portal Gateway Section -->
+        <section class="portal-access-container">
+            <div class="portal-main-card">
+                <div class="portal-icon-wrapper"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h2 class="portal-headline">Secure Login Gateway</h2>
+                <p class="portal-subheadline"> Please have your official <b>Registration Number</b> (e.g., <code>26/MMSPPM/KLA/AUG/004</code>) and secure password with you before login.</p>
+                
+                <div class="portal-actions-wrapper">
+                    <a href="https://drims.umi.ac.ug" target="_blank" class="btn btn-primary">
+                        Launch DRIMS Portal <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <div class="copy-textbox-container">
+                        <input type="text" value="https://drims.umi.ac.ug" readonly id="portalUrlInput" class="copy-input" aria-label="Portal URL Address">
+                        <button class="btn-copy-action" onclick="copyLinkFromInput('portalUrlInput', this)" title="Copy Portal URL">
+                            <i class="fa-solid fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-separator" id="downloads-section">
+
+        <section>
+            <h2 class="section-title">Reference Guides</h2>
+            <p class="section-subtitle">Download avaliable step-by-step manuals </p>
+            
+            <div class="manuals-grid">
+                <div class="manual-card">
+                    <div class="manual-info">
+                        <div class="manual-file-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                        <div class="manual-meta">
+                            <h3>DRIMS Student User Manual</h3>
+                            <p>Comprehensive step-by-step system walkthrough covering dashboard, messaging, and defense submissions.</p>
+                            <span class="file-spec">PDF • 3.2 MB</span>
+                        </div>
+                    </div>
+                    <a href="/public/docs/DRIMS DOCS_Student Portal Manual.pdf" download class="btn-download" title="Download Guide">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Uganda Management Institute (UMI). All rights reserved.</p>
+    </footer>
+
+    <script>
+        function copyLinkFromInput(inputId, buttonElement) {
+            const copyText = document.getElementById(inputId);
+            
+            // Select text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            navigator.clipboard.writeText(copyText.value).then(() => {
+                const originalMarkup = buttonElement.innerHTML;
+                const container = buttonElement.parentElement;
+                
+                // Add success state updates
+                buttonElement.innerHTML = '<i class="fa-solid fa-check"></i>';
+                container.classList.add('copied-state');
+                buttonElement.disabled = true;
+
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalMarkup;
+                    container.classList.remove('copied-state');
+                    buttonElement.disabled = false;
+                }, 1800);
+            }).catch(err => {
+                console.error('Execution failure on copy utility: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
