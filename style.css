@@ -17,7 +17,7 @@
     --text-main: rgb(24, 31, 46);         /* Dark Charcoal Text (#1A202C) */
     --text-muted: rgb(99, 109, 123);     /* Muted Grey Text (#4A5568) */
 
-    --accent-gold-30: rgba(247, 185, 40, 0.300); 
+    --accent-gold-20: rgba(247, 185, 40, 0.200); 
     
     /* Layout & Surface Variables */
     --radius: 0.35rem;
@@ -84,9 +84,9 @@ body {
 }
 
 .umi-logo {
-    height: 3rem;
+    height: 4rem;
     width: auto;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.4rem;
     display: block;
 }
 
@@ -100,23 +100,22 @@ body {
   and
   (-moz-text-fill-color: #13227430)) {
   .outline-title {
-       -moz-text-fill-color: var(--accent-gold-30);
-    -webkit-text-fill-color: var(--accent-gold-30);
+       -moz-text-fill-color: var(--accent-gold-20);
+    -webkit-text-fill-color: var(--accent-gold-20);
        -moz-text-stroke-color: var(--accent-gold);
     -webkit-text-stroke-color: var(--accent-gold);
        -moz-text-stroke-width: 1.4px;  
     -webkit-text-stroke-width: 1.4px;
   }
 .outline-title {
-    font-size: 3.5rem;
+    font-size: 2.7rem;
     font-weight: 700;
     font-family: Helvetica, sans-serif;
     color: transparent;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
     line-height: 1.05;
     text-transform: uppercase;
-    margin-bottom: 1.25rem;
-    
+    margin-bottom: 1rem; 
 }
 
 .hero-subtitle {
@@ -124,7 +123,7 @@ body {
     font-weight: 300;
     font-size: 1.50rem;
     font-weight: 300;
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffffe6;
     margin-bottom: 0.75rem;
 }
 
@@ -132,7 +131,7 @@ body {
     font-size: 0.95rem;
     font-weight: 400;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.75);
+    color: #ffffffae;
     max-width: 36rem;
     margin-bottom: 2.5rem;
 }
@@ -241,14 +240,14 @@ body {
 }
 
 .portal-headline {
-    font-size: 1.75rem;
+    font-size: 1.44rem;
     font-weight: 700;
     color: var(--primary);
     margin-bottom: 0.75rem;
 }
 
 .portal-subheadline {
-    font-size: 0.95rem;
+    font-size: 0.89rem;
     color: var(--text-muted);
     margin: 0 auto 1.3rem auto;
     max-width: 28rem;
