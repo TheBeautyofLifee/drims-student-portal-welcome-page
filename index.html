@@ -11,16 +11,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/public/icon.png">
 
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom Theme & Utility Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="hero-banner">
-        <div class="hero-container">
+<main class="main-wrapper">
+    <!-- <header class="hero-banner">
+        <div class="hero-container absolute inset-0 -z-10">
             <img src="/public/logo.png" alt="Uganda Management Institute Logo" class="umi-logo">
             <h1>Student Portal</h1>
             <p class="description">
@@ -31,27 +31,30 @@
           <a href="#" class="btn-view-docs active" title="Student Home">Home</a>
           <a href="#downloads-section" class="btn-view-docs" title="Jump to Downloadable Materials">Downloads</a>
         </div>
-    </header>
+        </header>  -->
+
+        <header class="hero-banner">
+            <div class="hero-container">
+                <img src="/public/logo.png" alt="Uganda Management Institute Logo" class="umi-logo">
+                <h1 class="outline-title">STUDENT PORTAL</h1>
+                <p class="hero-subtitle">Digitized Research Information Management System</p>
+                <p class="description">Manage your postgraduate research progress, sync milestones, track document reviews, and communicate with your supervisors seamlessly.</p>
+                
+                <!-- <div class="hero-actions">
+                    <a href="https://drims.umi.ac.ug" class="btn btn-gold">Launch Portal</a>
+                    <a href="#guides" class="btn btn-outline">Downloads</a>
+                </div> -->
+            </div>
+            
+            <!-- Curved Bottom Divider SVG -->
+            <svg class="hero-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0 0C240 96 600 120 720 120C840 120 1200 96 1440 0V120H0V0Z" fill="currentColor"></path>
+            </svg>
+        </header>
 
     <main class="main-content">
-        <!-- <section class="gateway-container">
-            <div class="gateway-card">
-                <div class="gateway-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <p class="gateway-subtitle">Log in to track your student journey, submit defense drafts, and manage approvals.</p>
-                
-                <div class="actions">
-                    <a href="https://drims.umi.ac.ug" target="_blank" class="btn btn-primary">
-                        Launch Student Portal <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <button class="btn btn-secondary" onclick="copyLink('https://drims.umi.ac.ug', this)">
-                        <i class="fa-solid fa-copy"></i> Copy URL
-                    </button>
-                </div>
-            </div>
-        </section> -->
-
         <!-- Main Portal Gateway Section -->
-        <section class="portal-access-container">
+        <!-- <section class="portal-access-container">
             <div class="portal-main-card">
                 <div class="portal-icon-wrapper"><i class="fa-solid fa-graduation-cap"></i></div>
                 <h2 class="portal-headline">Secure Login Gateway</h2>
@@ -70,11 +73,38 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <hr class="section-separator" id="downloads-section">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Centralized Focus Portal Component -->
+            <section class="portal-access-container">
+                <div class="portal-main-card shadow-card">
+                    <div class="portal-icon-wrapper">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="portal-headline">Secure Login Gateway</h2>
+                    <p class="portal-subheadline">Please have your official <strong>Registration Number</strong> <br/> (e.g., 26/MMSPPM/KLA/AUG/004) and secure password with you before login.</p>
+                    
+                    <div class="portal-actions-wrapper">
+                        <a href="https://drims.umi.ac.ug" class="btn btn-primary">
+                            <span>Launch DRIMS Portal</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        
+                        <div class="copy-textbox-container">
+                            <input type="text" readonly value="https://drims.umi.ac.ug" class="copy-input">
+                            <button aria-label="Copy portal link" class="btn-copy-action" style="padding: 12px;">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section>
+         <!-- <hr class="section-separator" id="downloads-section"> -->
+
+        <!-- <section>
             <h2 class="section-title">Reference Guides</h2>
             <p class="section-subtitle">Download avaliable step-by-step manuals </p>
             
@@ -95,11 +125,38 @@
 
 
             </div>
-        </section>
-    </main>
+        </section> -->
 
+        <!-- Download Reference Guides Section -->
+            <!-- <section id="guides" class="guides-section">
+                <div class="section-header">
+                    <h2 class="section-title">Reference Guides</h2>
+                    <p class="section-subtitle">Download available step-by-step manuals</p>
+                </div>
+
+                <div class="manuals-grid">
+                    <div class="manual-card shadow-card">
+                        <div class="manual-info">
+                            <i class="fa-solid fa-file-lines manual-file-icon"></i>
+                            <div class="manual-meta">
+                                <h3>DRIMS User Manual for Students</h3>
+                                <p>Comprehensive step-by-step system walkthrough covering dashboard, messaging, and defense submissions.</p>
+                                <span>PDF • 3.2 MB</span>
+                            </div>
+                        </div>
+                        <a href="/public//docs/DRIMS DOCS_Student Portal Manual.pdf" aria-label="Download DRIMS Student User Manual" class="btn-download" target="_blank">
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </section> -->
+
+
+    </main>
+    </main>
     <footer>
-        <p>&copy; 2026 Uganda Management Institute (UMI). All rights reserved.</p>
+        <p>&copy; 2026 <a class="company-link" aria-label="UMI official website" href="https://umi.ac.ug/">UMI</a>. All rights reserved.</p>
     </footer>
 
     <script>

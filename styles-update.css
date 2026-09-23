@@ -1,6 +1,4 @@
 @custom-variant dark (&:is(.dark *));
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-
 
 /*
  * Design System Definition & Light-Mode Default Settings
@@ -8,34 +6,31 @@
 
 :root {
     /* Custom Brand Theme Colors */
-    --primary: hsl(228, 61%, 35%);         /* Intergalactic Highway Blue (#23388F) */
-    --primary-hover: rgb(11, 16, 99);   /* Darker Shade Blue (#192866) */
-    --accent-gold: hsl(39, 98%, 68%);        /* Glowing Lantern Gold (#FCB638) */
-    --accent-blue: rgb(145, 219, 242);       /* Light Budgie Blue (#9FD3EB) */
-    --bg-light: rgb(246, 248, 249);      /* Off-White Background (#F5F6F8) */
-    --card-bg: rgb(255, 255, 255);                    /* Pure White Cards */
-    --text-main: rgb(24, 31, 46);         /* Dark Charcoal Text (#1A202C) */
-    --text-muted: rgb(99, 109, 123);     /* Muted Grey Text (#4A5568) */
-
-    --accent-gold-30: rgba(247, 185, 40, 0.300); 
+    --primary: oklch(0.33 0.147 268.5);         /* Intergalactic Highway Blue (#23388F) */
+    --primary-hover: oklch(0.25 0.14 268.5);   /* Darker Shade Blue (#192866) */
+    --accent-gold: oklch(0.82 0.16 82);        /* Glowing Lantern Gold (#FCB638) */
+    --accent-blue: oklch(0.85 0.08 220);       /* Light Budgie Blue (#9FD3EB) */
+    --bg-light: oklch(0.977 0.003 247.9);      /* Off-White Background (#F5F6F8) */
+    --card-bg: oklch(1 0 0);                    /* Pure White Cards */
+    --text-main: oklch(0.24 0.03 264);         /* Dark Charcoal Text (#1A202C) */
+    --text-muted: oklch(0.53 0.025 257.4);     /* Muted Grey Text (#4A5568) */
     
     /* Layout & Surface Variables */
-    --radius: 0.35rem;
+    --radius: 0.75rem;
     --background: var(--bg-light);
     --foreground: var(--text-main);
     --card: var(--card-bg);
-    --navy-deep: #060917;
-    --gradient-hero: linear-gradient(188deg, #23388F, #1C2D72);
+    --navy-deep: oklch(0.25 0.14 268.5);
+    --gradient-hero: linear-gradient(170deg, oklch(0.33 0.147 268.5), oklch(0.22 0.12 268.5));
     
     /* Elevations & Shadows */
-    --shadow: 0 10px 25px -5px #18277f10, 0 8px 10px -6px oklch(0.33 0.147 268.5 / 0.08);
-    --shadow-hover: 0 20px 30px -10px #18277f60;
-    --shadow-card: 0 18px 45px -24px #18277f20;
+    --shadow: 0 10px 25px -5px oklch(0.33 0.147 268.5 / 0.08), 0 8px 10px -6px oklch(0.33 0.147 268.5 / 0.08);
+    --shadow-hover: 0 20px 30px -10px oklch(0.33 0.147 268.5 / 0.18);
+    --shadow-card: 0 18px 45px -24px oklch(0.33 0.147 268.5 / 0.25);
     --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Typography Tokens */
     --font-display: "Inter", sans-serif;
-    ---font-optical-sizing: auto;
     --font-body: "Inter", sans-serif;
     --border: oklch(0.929 0.013 255.508);
 }
@@ -67,14 +62,12 @@ body {
 
 /* Header & Curved Hero UI Section */
 .hero-banner {
-    display: flex;
     position: relative;
     background: var(--gradient-hero);
     width: 100%;
     padding: 4rem 1.5rem 10rem 1.5rem;
     color: white;
     overflow: hidden;
-    height: 490px;
 }
 
 .hero-container {
@@ -91,38 +84,19 @@ body {
 }
 
 /* Outline Text Title Effect */
-@supports 
-  ((-webkit-text-stroke-color: var(--accent-gold))
-  and
-  (-webkit-text-fill-color: #13227430))
-  or
-  ((-moz-text-stroke-color: var(--accent-gold))
-  and
-  (-moz-text-fill-color: #13227430)) {
-  .outline-title {
-       -moz-text-fill-color: var(--accent-gold-30);
-    -webkit-text-fill-color: var(--accent-gold-30);
-       -moz-text-stroke-color: var(--accent-gold);
-    -webkit-text-stroke-color: var(--accent-gold);
-       -moz-text-stroke-width: 1.4px;  
-    -webkit-text-stroke-width: 1.4px;
-  }
 .outline-title {
     font-size: 3.5rem;
     font-weight: 700;
-    font-family: Helvetica, sans-serif;
     color: transparent;
+    -webkit-text-stroke: 2px var(--accent-gold);
     letter-spacing: 0.02em;
     line-height: 1.05;
     text-transform: uppercase;
     margin-bottom: 1.25rem;
-    
 }
 
 .hero-subtitle {
-    font-family: Helvetica, sans-serif;
-    font-weight: 300;
-    font-size: 1.50rem;
+    font-size: 1.35rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0.75rem;
@@ -130,7 +104,6 @@ body {
 
 .description {
     font-size: 0.95rem;
-    font-weight: 400;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.75);
     max-width: 36rem;
@@ -159,7 +132,7 @@ body {
     font-family: inherit;
     font-size: 0.875rem;
     font-weight: 600;
-    padding: 0.85rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 0.375rem;
     cursor: pointer;
     transition: var(--transition);
@@ -192,10 +165,6 @@ body {
 /* Main Content Area */
 .main-content {
     max-width: 48rem;
-    height: 36rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     width: 100%;
     margin: -4rem auto 0 auto;
     padding: 0 1.5rem 6rem 1.5rem;
@@ -205,19 +174,13 @@ body {
 
 /* Portal Access Card Component */
 .portal-access-container {
-    box-sizing: border-box;
-    width: 609px;
     margin-bottom: 5rem;
 }
 
 .portal-main-card {
-    max-width: 38rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     background: var(--card-bg);
     border-radius: 1rem;
-    padding: 4rem 2rem 4rem 2rem;
+    padding: 2.5rem;
     text-align: center;
     border: 1px solid var(--border);
 }
@@ -227,9 +190,8 @@ body {
 }
 
 .portal-icon-wrapper {
-    background: #fef0d7b4;
-    color: #FCB638;
-    border: 1px var(--accent-gold);
+    background: oklch(0.955 0.008 247.9);
+    color: var(--primary);
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -250,8 +212,8 @@ body {
 .portal-subheadline {
     font-size: 0.95rem;
     color: var(--text-muted);
-    margin: 0 auto 1.3rem auto;
-    max-width: 28rem;
+    margin: 0 auto 2rem auto;
+    max-width: 32rem;
     line-height: 1.5;
 }
 
@@ -271,7 +233,7 @@ body {
 .btn-primary {
     background: var(--primary);
     color: white;
-    padding: 0.895rem 1.5rem;
+    padding: 0.875rem 1.5rem;
     border-radius: 0.5rem;
     justify-content: space-between;
     font-size: 0.9rem;
@@ -286,7 +248,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #ecf1f5ed;
+    background: oklch(0.955 0.008 247.9);
     border-radius: 0.5rem;
     padding: 0.35rem 0.35rem 0.35rem 1.25rem;
 }
@@ -322,7 +284,6 @@ body {
 
 /* Downloads / Reference Guides Section */
 .guides-section {
-    max-width: 36rem;
     padding-top: 1rem;
 }
 
@@ -422,11 +383,6 @@ footer {
     border-top: 1px solid var(--border);
     background: var(--card-bg);
     margin-top: auto;
-}
-
-.company-link {
-    color: var(--text-muted);
-    text-decoration: none;
 }
 
 /* Mobile Responsiveness */
