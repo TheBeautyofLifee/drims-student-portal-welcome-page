@@ -112,7 +112,8 @@ body {
     -webkit-text-stroke-color: var(--accent-gold);
        -moz-text-stroke-width: 1.4px;  
     -webkit-text-stroke-width: 1.4px;
-  }
+  }}
+  
 .outline-title {
     font-size: 2.7rem;
     font-weight: 700;
